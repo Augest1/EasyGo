@@ -1,0 +1,72 @@
+卷 软件 的文件夹 PATH 列表
+卷序列号为 80F7-C268
+D:.
+│  .gitignore
+│  a.txt
+│  go.mod
+│  go.sum
+│  README.md
+│  
+├─.idea
+│  │  .gitignore
+│  │  EasyGo.iml
+│  │  modules.xml
+│  │  vcs.xml
+│  │  workspace.xml
+│  │  
+│  └─copilot
+│      └─chatSessions
+│          │  00000000000.xd
+│          │  xd.lck
+│          │  
+│          └─blobs
+│                  version
+│                  
+├─common
+│  └─convert
+│          extendfunc.go
+│          
+├─doc
+└─services
+    ├─api
+    ├─model
+    │  └─usermodel
+    │          usersmodel.go
+    │          usersmodel_gen.go
+    │          vars.go
+    │          
+    └─rpc
+        └─user
+            │  user.go
+            │  user.proto
+            │  user_model.proto
+            │  
+            ├─client
+            │  └─userservice
+            │          userService.go
+            │          
+            ├─etc
+            │      user.yaml
+            │      
+            ├─internal
+            │  ├─config
+            │  │      config.go
+            │  │      
+            │  ├─logic
+            │  │  └─userservice
+            │  │          createUserLogic.go
+            │  │          getUserByIdLogic.go
+            │  │          updateUserLogic.go
+            │  │          
+            │  ├─server
+            │  │  └─userservice
+            │  │          userServiceServer.go
+            │  │          
+            │  └─svc
+            │          serviceContext.go
+            │          
+            └─userRpcModel
+                    user.pb.go
+                    user_grpc.pb.go
+                    user_model.pb.go
+                    

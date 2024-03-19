@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package user;
+option go_package = "./userRpcModel";
+import "user_model.proto";
+message ReqCreateUser {
+  userrpcmodel.User info=1;
+}
+
+message ResUser {
+  userrpcmodel.User info=1;
+}
+message ReqId{
+  int64 id=1;
+}
+service UserService {
+  rpc CreateUser(ReqCreateUser) returns (ResUser);
+  rpc GetUserById(ReqId)returns (ResUser);
+  rpc UpdateUser(ReqCreateUser) returns (ResUser);
+}

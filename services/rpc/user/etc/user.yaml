@@ -1,0 +1,11 @@
+Name: user.rpc
+ListenOn: 0.0.0.0:20001
+#Etcd:
+#  Hosts:
+#  - 127.0.0.1:2379
+#  Key: user.rpc
+DataSource: postgres://zhenghao:xingyu123@122.51.9.157:5432/easyGo?sslmode=disable
+Cache:
+  - Host: 122.51.9.157:6379
+    Type: node
+    Pass: jhkdjhkjdhsIUTYURTU_752jE5

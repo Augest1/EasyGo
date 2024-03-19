@@ -35,3 +35,26 @@ func SQLNullFloat64ToFloat64(i sql.NullFloat64) float64 {
 	}
 	return 0
 }
+func StringToSQLNullString(s string) sql.NullString {
+	return sql.NullString{
+		String: s,
+		Valid:  s != "",
+	}
+}
+func StringToSQLTime(s string) time.Time {
+	t, _ := time.Parse(time.DateTime, s)
+	return t
+}
+func StringToSQLNullTime(s string) sql.NullTime {
+	if s != "" {
+		t, _ := time.Parse(time.DateTime, s)
+		return sql.NullTime{
+			Time:  t,
+			Valid: true,
+		}
+	}
+	return sql.NullTime{
+		Time:  time.Time{},
+		Valid: false,
+	}
+}

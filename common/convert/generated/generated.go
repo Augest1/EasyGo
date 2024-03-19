@@ -4,12 +4,34 @@ package generated
 
 import (
 	convert "EasyGo/common/convert"
-	usermodel "EasyGo/services/model/usermodel"
+	usermodel "EasyGo/services/model/userModel"
 	userrpcmodel "EasyGo/services/rpc/user/userRpcModel"
 )
 
 type ConverterImpl struct{}
 
+func (c *ConverterImpl) UserR2S(source *userrpcmodel.User) *usermodel.Users {
+	var pUserModelUsers *usermodel.Users
+	if source != nil {
+		var userModelUsers usermodel.Users
+		userModelUsers.Id = (*source).Id
+		userModelUsers.Username = (*source).Username
+		userModelUsers.Nickname = (*source).Nickname
+		userModelUsers.Name = convert.StringToSQLNullString((*source).Name)
+		userModelUsers.CreatedAt = convert.StringToSQLTime((*source).CreatedAt)
+		userModelUsers.UpdatedAt = convert.StringToSQLTime((*source).UpdatedAt)
+		userModelUsers.DeletedAt = convert.StringToSQLNullTime((*source).DeletedAt)
+		userModelUsers.Status = (*source).Status
+		userModelUsers.Signature = convert.StringToSQLNullString((*source).Signature)
+		userModelUsers.Avatar = (*source).Avatar
+		userModelUsers.Sex = (*source).Sex
+		userModelUsers.Mobile = (*source).Mobile
+		userModelUsers.IdCardNum = convert.StringToSQLNullString((*source).IdCardNum)
+		userModelUsers.Birth = convert.StringToSQLNullTime((*source).Birth)
+		pUserModelUsers = &userModelUsers
+	}
+	return pUserModelUsers
+}
 func (c *ConverterImpl) UserS2R(source *usermodel.Users) *userrpcmodel.User {
 	var pUserRpcModelUser *userrpcmodel.User
 	if source != nil {
